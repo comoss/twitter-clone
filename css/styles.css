@@ -49,7 +49,7 @@ body {
 	cursor: pointer;
 	border-radius: 4px;
 }
-.button:disabled {
+.button.disabled {
 	color: #777;
 	text-shadow: 0 1px 1px rgba(255,255,255,.75);
 	cursor: default;
@@ -169,7 +169,7 @@ body {
 	.tweet-actions {
 		text-align: right;
 	}
-		.tweet-actions ul {
+			.tweet-actions ul {
 			list-style-type: none;
 		}
 			.tweet-actions li {
@@ -179,7 +179,9 @@ body {
 				cursor: pointer;
 				margin-right: 2px;
 			}
+	
 
+   
 	.icon {
 		color: #2FC2EF;
 		background-color: #2FC2EF;
@@ -259,4 +261,9 @@ body {
 				left: 0;
 			}
 
+
+.over {
+
+	color:red;
+}
 
