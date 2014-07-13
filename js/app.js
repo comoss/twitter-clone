@@ -4,16 +4,12 @@ $(document).ready(function(){
 		$('.stats').hide();
 
   $('.tweet').click(function(){
-  $(this).find('.reply').slideDown();
   $(this).find('#tweet-controls').slideDown();
   $(this).find('.stats').slideDown();
+  $(this).find('.reply').slideDown();
 });
   
-//   $('.tweet').click(function(){
-//   $(this).find('.reply').slideUp();
-//   $(this).find('#tweet-controls').slideUp();
-//   $(this).find('.stats').slideUp();
-// });
+
 var toggleComposeHeight = function(){
 	var compose = $('#toggle');
 
@@ -24,7 +20,7 @@ var toggleComposeHeight = function(){
 		}
 	}
 
-	$('.tweet-compose').click(function(){
+	$('#toggle').click(function(){
 		toggleComposeHeight();
 		$('#tweet-controls').slideDown();
 		});
@@ -52,20 +48,6 @@ $('textarea').bind('keyup keydown', function(){
 
 });
 
-
-// var myTweet = $(	);
-
-
-//  $('#tweet-submit').click(function(){
-//  	var newTweet = $('#toggle').val();
-//  	myTweet.find('#tw').text(newTweet);
-//  	myTweet.prependTo('#stream');
-//  	$('.tweet-compose').val("");
-
-
-
-//  });
-
  $('#tweet-submit').click(function(){
 	var newTweet = $('#toggle').val();
  	var newTweetBox = $('#stream > .tweet').first().clone();
@@ -81,30 +63,32 @@ $('textarea').bind('keyup keydown', function(){
 
 
 
-// $( "#tweet" ).click(function() {
-//   $( "#tweet-controls, .tweet-actions" ).slideDown( "fast", function() {
-//     // Animation complete.
-//   });
-// });
+
 $( "#tweet" ).click(function() {
-  $( "#tweet-controls, .tweet-actions" ).slideUp( "fast", function() {
+  $( "#tweet-controls, .tweet-actions" ).slideDown( "fast", function() {
     // Animation complete.
   });
-});
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 });
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
