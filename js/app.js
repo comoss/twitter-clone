@@ -9,6 +9,11 @@ $(document).ready(function(){
   $(this).find('.stats').slideDown();
 });
   
+//   $('.tweet').click(function(){
+//   $(this).find('.reply').slideUp();
+//   $(this).find('#tweet-controls').slideUp();
+//   $(this).find('.stats').slideUp();
+// });
 var toggleComposeHeight = function(){
 	var compose = $('#toggle');
 
@@ -68,18 +73,24 @@ $('textarea').bind('keyup keydown', function(){
  	$(newTweetBox).find('img').first().attr('src', 'img/alagoon.jpg');
 	$(newTweetBox).find('.fullname').first().text('Cody Moss');
 	$(newTweetBox).find('.username').first().text('@moss_cody');
+ 	// $(newTweetBox).find('.stats').first().text();
+ 	// $(newTweetBox).find('.time').first().text();
  	$(newTweetBox).prependTo('#stream');
 	$('.tweet-compose').val("");
  });
 
 
 
+// $( "#tweet" ).click(function() {
+//   $( "#tweet-controls, .tweet-actions" ).slideDown( "fast", function() {
+//     // Animation complete.
+//   });
+// });
 $( "#tweet" ).click(function() {
-  $( "#tweet-controls, .tweet-actions" ).slideDown( "slow", function() {
+  $( "#tweet-controls, .tweet-actions" ).slideUp( "fast", function() {
     // Animation complete.
   });
 });
-
 
 
 
