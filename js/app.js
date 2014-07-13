@@ -1,6 +1,14 @@
 $(document).ready(function(){
 		$('#tweet-controls').hide();
+		$('.reply').hide(); 
+		$('.stats').hide();
 
+  $('.tweet').click(function(){
+  $(this).find('.reply').slideDown();
+  $(this).find('#tweet-controls').slideDown();
+  $(this).find('.stats').slideDown();
+});
+  
 var toggleComposeHeight = function(){
 	var compose = $('#toggle');
 
@@ -13,7 +21,7 @@ var toggleComposeHeight = function(){
 
 	$('.tweet-compose').click(function(){
 		toggleComposeHeight();
-		$('#tweet-controls').show();
+		$('#tweet-controls').slideDown();
 		});
 
 var maxCharacters = 140;
@@ -37,29 +45,55 @@ $('textarea').bind('keyup keydown', function(){
 
    count.text(maxCharacters - characters);
 
- 
-
-
 });
-   $('#tweet-submit').click(function(){
- 	var newTweet = $('#toggle').val();
- 	console.log(newTweet);
- 	$('#myTweet').prepend(newTweet);
 
+
+// var myTweet = $(	);
+
+
+//  $('#tweet-submit').click(function(){
+//  	var newTweet = $('#toggle').val();
+//  	myTweet.find('#tw').text(newTweet);
+//  	myTweet.prependTo('#stream');
+//  	$('.tweet-compose').val("");
+
+
+
+//  });
+
+ $('#tweet-submit').click(function(){
+	var newTweet = $('#toggle').val();
+ 	var newTweetBox = $('#stream > .tweet').first().clone();
+ 	$(newTweetBox).find('p').first().text(newTweet);
+ 	$(newTweetBox).find('img').first().attr('src', 'img/alagoon.jpg');
+	$(newTweetBox).find('.fullname').first().text('Cody Moss');
+	$(newTweetBox).find('.username').first().text('@moss_cody');
+ 	$(newTweetBox).prependTo('#stream');
+	$('.tweet-compose').val("");
  });
- 
-$('#myImput').hide();
-$('#tweet-submit').click(function(){
-		toggleComposeHeight();
-		$('#myImput').show();
-	
-	});
 
-$('.tweet').mouseenter(function(){
-  $('.tweet-actions').show()
-}).mouseleave(function(){
-	$('.tweet-actions').hide()
-})
+
+
+$( "#tweet" ).click(function() {
+  $( "#tweet-controls, .tweet-actions" ).slideDown( "slow", function() {
+    // Animation complete.
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });
+
